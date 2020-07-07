@@ -12,12 +12,14 @@ pipeline {
                 }
             }
         }
- 
-        Stage('Create Tomcat Docker Image'){
+
+        stage('Create Tomcat Docker Image'){
             steps {
+                sh "pwd"
+                sh "ls -a"
                 sh "docker build . -t tomcatsamplewebapp:${env.BUILD_ID}"
             }
         }
- 
+
     }
 }
